@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        //Recuperer la liste des employes de venyse Groupe
+        $employes = Employee::all();
+        return "liste des employes: " .$employes ;
     }
 
     /**
