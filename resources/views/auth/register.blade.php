@@ -115,7 +115,7 @@
           <!-- /.col -->
         </div>
     </form>
-      <a href="login.html" class="text-center">Vous avez deja un compte?</a>
+      <a href="{{route('login')}}" class="text-center">Vous avez deja un compte?</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
