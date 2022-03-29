@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Membre extends Model
+class Employes extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -18,8 +18,7 @@ class Membre extends Model
         'country',
         'town',
         'born_day',
-        'address',
-        'photoId_url'
+        'address'
     ];
     public $timestamps = true;
 }

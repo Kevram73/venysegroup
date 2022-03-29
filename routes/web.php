@@ -14,6 +14,11 @@ use App\Http\Controllers\MembreController;
 |
 */
 
+/**
+ * Authentication routes
+ */
+Route::get('profile','App\Http\Controllers\Auth\ProfileController@profile')->middleware('auth');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,12 +27,8 @@ Route::get('index', function(){
     return view('venyse/dashboard');
 });
 /**
- * Routes for Registration and login for employee
- */
-//Route::get('employees',[EmployeeController::class]);
-Route::get('employees','App\Http\Controllers\EmployeeController@index');
-Route::get('add-employee', 'App\Http\Controllers\EmployeeController@create');
-/** Resources pour le CRUD sur les membres */
+ * Resources pour le CRUD sur les membres  (nouveau employes)
+ **/
 Route::get('membres', 'App\Http\Controllers\MembreController@index');
 Route::get('add-membre', 'App\Http\Controllers\MembreController@create');
 Route::post('save-membre', 'App\Http\Controllers\MembreController@store')->name('save-membre');
@@ -36,7 +37,6 @@ Route::post('save-membre', 'App\Http\Controllers\MembreController@store')->name(
  */
 Route::get('add', 'App\Http\Controllers\VenyseController@create');
 Route::post('add-venyse','App\Http\Controllers\VenyseController@store')->name('add-venyse');
-Auth::routes();
 
 Auth::routes();
 
@@ -45,3 +45,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
    * Logout Route
 */
 Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
+/**
+ * Resources pour les employe(e)s de venyse groupe
+ */
+Route::get('employes','App\Http\Controllers\EmployesController@index');
+Route::get('add-employes','App\Http\Controllers\EmployesController@showForm');
+Route::post('save-employes','App\Http\Controllers\EmployesController@store');
+Route::get('edit-employes/{id}', 'App\Http\Controllers\EmployesController@show');
+Route::post('edit-employes/{id}','App\Http\Controllers\EmployesController@update');
+/**
+ * Resources pour les traders
+ */
+Route::get('traders','App\Http\Controllers\TraderController@index');
+Route::get('add-trader','App\Http\Controllers\TraderController@showForm');
+/**
+ * Resources pour la section forum
+ */
+Route::get('forum','App\Http\Controllers\ForumController@index');

@@ -3,7 +3,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/venyse.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Venyse Groupe</span>
     </a>
 
@@ -15,7 +15,14 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Godwin CEO</a>
+          <a href="#" class="d-block">
+            <?php
+                if (Auth::check()) {
+                    // The user is logged in...
+                    echo(Auth::user()->nom) ;
+                }
+            ?>
+            </a>
         </div>
       </div>
 
@@ -57,19 +64,19 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Employé(e)s
+                Traders
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('add-employee')}}" class="nav-link">
+                <a href="{{asset('add-trader')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>+ Ajouter </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a href="{{asset('traders')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Afficher tout</p>
                 </a>
@@ -80,19 +87,19 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                Membres
+                Employé(e)s
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('add-membre')}}" class="nav-link">
+                <a href="{{asset('add-employes')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>+ Ajouter</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="{{asset('employes')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Afficher tout</p>
                 </a>
@@ -138,29 +145,24 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Profile trader
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="{{asset('profile')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Voir profile</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/tables/data.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>Completer profile</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
+
             </ul>
           </li>
           <li class="nav-header">Examen traders</li>
@@ -173,6 +175,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="nav-icon far fa-user"></i>
@@ -181,6 +184,15 @@
               </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{asset('forum')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Forum
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
           <li class="nav-header">FORMATION</li>
           <li class="nav-item">
             <a href="" class="nav-link">
@@ -197,7 +209,7 @@
           <li class="nav-header">AUTHENTIFICATION</li>
           <li class="nav-item">
             <a href="{{ route('logout') }}" class="nav-link">
-              <i class="nav-icon far fa-circle text-danger"></i>
+              <i class="fa fa-power-off text-danger"></i>
               <p class="text">Log-out</p>
             </a>
           </li>

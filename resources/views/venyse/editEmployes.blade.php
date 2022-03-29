@@ -1,18 +1,18 @@
 @extends('venyse/footer')
 @section('content')
- <!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Employé(e)s</h1>
+            <h1>Employé(e)</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Employé(e)s</li>
+              <li class="breadcrumb-item active">Editer</li>
             </ol>
           </div>
         </div>
@@ -28,38 +28,38 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">+ Ajouter</h3>
+                <h3 class="card-title">+ Editer</h3>
               
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{asset('save-employes')}}" method="POST">
+              <form action="/edit-employes/{{$employe->id}}" method="POST">
                 @csrf
                   {{-- {{ $errors }} --}}
                 <div class="card-body">
-                  <div class="form-group">
+                  <div class="form-group">                                                                                                                                                                                                                                                                                                                                                                                                   
                     <label for="firstName">Prénom(s)</label>
-                    <input type="text" name="firstName" class="form-control" id="" placeholder=" Prenom(s)">
+                    <input type="text" name="firstName" value="{{$employe ->first_name}}" class="form-control" id="">
                   </div>
                   <div class="form-group">
                     <label for="lastName">Nom de famille</label>
-                    <input type="text" name="lastName" class="form-control" id="" placeholder=" Nom de Famille">
+                    <input type="text" value="{{$employe->last_name}}" name="lastName" class="form-control" id="">
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" id="" placeholder="Email">
+                    <input type="text" value="{{$employe->email}}" name="email" class="form-control" id="">
                   </div>
                   <div class="form-group">
                     <label for="phone">Numero de telephone</label> </label>
-                    <input type="text" name="phoneNumber" class="form-control" id="" placeholder="Numero de telephone">
+                    <input type="text" value="{{$employe->phone_number}}" name="phoneNumber" class="form-control" id="">
                   </div>
                   <div class="form-group">
                     <label for="firstName">Poste</label>
-                    <input type="text" name="poste" class="form-control" id="" placeholder=" Prenom(s)">
+                    <input type="text" value="{{$employe->poste}}" name="poste" class="form-control" id="" placeholder=" Prenom(s)">
                   </div>
                   <div class="form-group">
                     <label for="nationality">Nationalite</label>
-                    <input type="text" name="nationality" class="form-control" id="" placeholder=" Nationalite">
+                    <input type="text" value="{{$employe->nationality}}" name="nationality" class="form-control" id="" placeholder=" Nationalite">
                   </div>
     <div class="form-group">
     <label for="country">Pays</label>
@@ -314,48 +314,16 @@
                 </div>
                   <div class="form-group">
                     <label for="town">Ville</label></label>
-                    <input type="text" name="town" class="form-control" id="" placeholder="ville">
+                    <input type="text" value="{{$employe->town}}" name="town" class="form-control" id="" placeholder="ville">
                   </div>
                   <div class="form-group">
                     <label for="bornDay">Date de Naissance</label>
-                    <input type="date" name="bornDay" class="form-control" id="" placeholder=" Date de naissance">
+                    <input type="date" value="{{$employe->born_day}}" name="bornDay" class="form-control" id="" placeholder=" Date de naissance">
                   </div>
                   <div class="form-group">
                     <label for="address">Adresse</label>
-                    <input type="text" name="address" class="form-control" id="" placeholder=" Date de naissance">
+                    <input type="text" value="{{$employe->address}}" name="address" class="form-control" id="" placeholder=" Date de naissance">
                   </div>
-{{--                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div> --}}
-                  {{-- <div class="form-group">
-                    <label for="exampleInputFile">Photo passport</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="photoId" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div> --}}
-                  {{-- <div class="form-group">
-                    <label for="exampleInputFile">Certificat de residence</label> </label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div> --}}
-                  {{-- <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                  </div> --}}
                 </div>
                 <!-- /.card-body -->
 
@@ -372,6 +340,4 @@
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
 @endsection
-

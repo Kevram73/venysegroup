@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Employé(e)s</h1>
+            <h1>Traders</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Employé(e)s</li>
+              <li class="breadcrumb-item active">Traders</li>
             </ol>
           </div>
         </div>
@@ -29,37 +29,29 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">+ Ajouter</h3>
-              
+
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{asset('save-employes')}}" method="POST">
                 @csrf
-                  {{-- {{ $errors }} --}}
+                  {{ $errors }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="firstName">Prénom(s)</label>
-                    <input type="text" name="firstName" class="form-control" id="" placeholder=" Prenom(s)">
+                    <label for="firstName">Nationalité</label>
+                    <input type="text" name="nationality" class="form-control" id="" placeholder=" Prenom(s)">
                   </div>
                   <div class="form-group">
-                    <label for="lastName">Nom de famille</label>
-                    <input type="text" name="lastName" class="form-control" id="" placeholder=" Nom de Famille">
+                    <label for="lastName">Ville</label>
+                    <input type="text" name="town" class="form-control" id="" placeholder=" Nom de Famille">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" class="form-control" id="" placeholder="Email">
+                    <label for="email">Adresse</label>
+                    <input type="text" name="address" class="form-control" id="" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <label for="phone">Numero de telephone</label> </label>
-                    <input type="text" name="phoneNumber" class="form-control" id="" placeholder="Numero de telephone">
-                  </div>
-                  <div class="form-group">
-                    <label for="firstName">Poste</label>
-                    <input type="text" name="poste" class="form-control" id="" placeholder=" Prenom(s)">
-                  </div>
-                  <div class="form-group">
-                    <label for="nationality">Nationalite</label>
-                    <input type="text" name="nationality" class="form-control" id="" placeholder=" Nationalite">
+                    <label for="phone">années d'experience</label> </label>
+                    <input type="text" name="anneesExperience" class="form-control" id="" placeholder="Numero de telephone">
                   </div>
     <div class="form-group">
     <label for="country">Pays</label>
@@ -311,19 +303,7 @@
    <option value="Zambia">Zambia</option>
    <option value="Zimbabwe">Zimbabwe</option>
                   </select>
-                </div>
-                  <div class="form-group">
-                    <label for="town">Ville</label></label>
-                    <input type="text" name="town" class="form-control" id="" placeholder="ville">
-                  </div>
-                  <div class="form-group">
-                    <label for="bornDay">Date de Naissance</label>
-                    <input type="date" name="bornDay" class="form-control" id="" placeholder=" Date de naissance">
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Adresse</label>
-                    <input type="text" name="address" class="form-control" id="" placeholder=" Date de naissance">
-                  </div>
+
 {{--                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">

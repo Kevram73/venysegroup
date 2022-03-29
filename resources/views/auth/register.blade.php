@@ -27,21 +27,21 @@
         @csrf
         {{ $errors}}
         <div class="input-group mb-3">
-          <input type="text" name="name" class="form-control" placeholder="Entrez votre nom">
+          <input type="text" name="nom" class="form-control" placeholder="Entrez votre nom">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
             </div>
           </div>
-            @error('name')
+            @error('nom')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
         </div>
         <div class="input-group mb-3">
-            <input type="text" name="firstName" class="form-control" placeholder="Entrer votre prenom(s)">
-            @error('firstName')
+            <input type="text" name="prenoms" class="form-control" placeholder="Entrer votre prenom(s)">
+            @error('prenoms')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -53,8 +53,20 @@
             </div>
         </div>
         <div class="input-group mb-3">
-          <input type="date" name="bornDay" class="form-control" placeholder="Email">
-
+          <input type="text" name="sexe" class="form-control" placeholder="Sexe">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fas fa-user"></span>
+                </div>
+            </div>
+            @error('sexe')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" name="telephone_1" class="form-control" placeholder="Votre telephone">
         </div>
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control" placeholder="Email">
@@ -64,19 +76,7 @@
               </div>
             </div>
         </div>
-        <div class="input-group mb-3">
-            <input type="text" name="sexe" class="form-control" placeholder="Sexe">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
-              @error('sexe')
-                  <span class="invalid-feedback" role="alert">
-                      <strong>{{ $message }}</strong>
-                  </span>
-              @enderror
-          </div>
+        
         <div class="input-group mb-3">
           <input type="password" name="password" class="form-control" placeholder="Password">
           @error('password')
