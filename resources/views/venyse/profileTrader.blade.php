@@ -55,7 +55,7 @@
 
                 </ul>
 
-                <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                <a href="{{asset('completer-profile')}}" class="btn btn-danger btn-block"><b>Mettre à jour</b></a>
               </div>
               <!-- /.card-body -->
             </div>

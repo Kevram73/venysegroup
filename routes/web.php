@@ -58,6 +58,8 @@ Route::post('edit-employes/{id}','App\Http\Controllers\EmployesController@update
  */
 Route::get('traders','App\Http\Controllers\TraderController@index');
 Route::get('add-trader','App\Http\Controllers\TraderController@showForm');
+Route::get('completer-profile', 'App\Http\Controllers\TraderController@updateProfileForm');
+Route::post('completer-profile','App\Http\Controllers\TraderController@updateProfile');
 /**
  * Resources pour la section forum
  */

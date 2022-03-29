@@ -174,6 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Tarikhagustia\LaravelMt5\LaravelMt5Provider::class,
 
     ],
 
