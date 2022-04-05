@@ -30,10 +30,10 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle"
-                       src="../../dist/img/user4-128x128.jpg"
+                       src="{{asset('../../dist/img/user4-128x128.jpg')}}"
                        alt="User profile picture">
                 </div>
-
+                {{-- {{$url}} --}}
                 <h3 class="profile-username text-center">{{Auth::user()->nom}} {{Auth::user()->prenoms}}</h3>
 
                 <p class="text-muted text-center">Trader chez Venyse Groupe</p>
@@ -46,7 +46,37 @@
                     <b>Email</b> <a class="float-right">{{Auth::user()->email}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Adresse</b> <a class="float-right">X</a>
+                    <b>Adresse</b> <a class="float-right">
+                        <?php
+                            if(isset($trader)){
+                                echo($trader->adresse);
+                            }else{
+                                echo("Neant");
+                            }
+                        ?>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Pays</b> <a class="float-right">
+                        <?php
+                            if(isset($trader)){
+                                echo($trader->pays);
+                            }else{
+                                echo("Neant");
+                            }
+                        ?>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Date de Naissance</b> <a class="float-right">
+                        <?php
+                            if(isset($trader)){
+                                echo($trader->date_naissance);
+                            }else{
+                                echo("Neant");
+                            }
+                        ?>
+                    </a>
                   </li>
                   <li class="list-group-item">
                     <b>Sexe</b> <a class="float-right">{{Auth::user()->sexe}}</a>

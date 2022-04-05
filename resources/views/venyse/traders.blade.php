@@ -39,7 +39,7 @@
                     <th>Email</th>
                     <th>Telephone</th>
                     <th>Sexe</th>
-                    {{-- <th>Adresse</th> --}}
+                    <th>Status</th>
                     <th>Option(s)</th>
                   </tr>
                   </thead>
@@ -50,7 +50,15 @@
                             <td>{{$trader->email}}</td>
                             <td>{{$trader->telephone_1}} </td>
                             <td>{{$trader->sexe}} </td>
-                            {{-- <td>{{$trader->address}} </td> --}}
+                            <td>
+                                <?php
+                                    if($trader->profile_status==0){
+                                        echo('incomplet');
+                                    }else{
+                                        echo('complet');
+                                    }
+                                ?>
+                            </td>
                             <td>
                                 <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 <a href=""><button class="btn btn-info"><i class="fa fa-edit"></i></button></a>
@@ -64,7 +72,7 @@
                     <th>Email</th>
                     <th>Telephone</th>
                     <th>Sexe</th>
-                    {{-- <th>Adresse</th> --}}
+                    <th>Adresse</th>
                     <th>Option(s)</th>
                   </tr>
                   </tfoot>

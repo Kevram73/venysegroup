@@ -26,6 +26,6 @@ class Trader extends Model
     //Inverse of the one to one relationship BelongsTo
     public function user()
     {
-        return $this->belongsTo(User::class)
+        return $this->belongsTo(User::class);
     }
 }
