@@ -84,9 +84,12 @@
 
 
                 </ul>
-
-                <a href="{{asset('completer-profile')}}" class="btn btn-danger btn-block"><b>Mettre à jour</b></a>
-              </div>
+                @if(Auth::user()->profile_status == 0)
+                    <a href="{{asset('completer-profile')}}" class="btn btn-danger btn-block"><b>Mettre à jour</b></a>
+                @else
+                    <a href="{{asset('completer-profile')}}" class="btn btn-success btn-block"><b>Informations completes. Modifier ?</b></a>
+                @endif
+                </div>
               <!-- /.card-body -->
             </div>
 

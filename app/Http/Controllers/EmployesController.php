@@ -96,4 +96,8 @@ class EmployesController extends Controller
             return redirect('employes');
         }
     }
+    //fonction pour supprimer un employe du systeme
+    public function delete(Request $request){
+        
+    }
 }

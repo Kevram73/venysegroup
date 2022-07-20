@@ -43,7 +43,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 /**
-   * Logout Route
+* Logout Route
 */
 Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
 /**
@@ -54,6 +54,7 @@ Route::get('add-employes','App\Http\Controllers\EmployesController@showForm');
 Route::post('save-employes','App\Http\Controllers\EmployesController@store');
 Route::get('edit-employes/{id}', 'App\Http\Controllers\EmployesController@show');
 Route::post('edit-employes/{id}','App\Http\Controllers\EmployesController@update');
+
 /**
  * Resources pour les traders
  */
@@ -61,7 +62,13 @@ Route::get('traders','App\Http\Controllers\TraderController@index');
 Route::get('add-trader','App\Http\Controllers\TraderController@showForm');
 Route::get('completer-profile', 'App\Http\Controllers\TraderController@updateProfileForm');
 Route::post('completer-profile','App\Http\Controllers\TraderController@updateProfile');
+
 /**
  * Resources pour la section forum
  */
 Route::get('forum','App\Http\Controllers\ForumController@index');
+Route::post('forum','App\Http\Controllers\ForumController@create');
+
+/**
+ * Resources pour la gestion dees statistiques
+ * */

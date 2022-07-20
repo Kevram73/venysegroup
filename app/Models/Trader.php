@@ -22,10 +22,14 @@ class Trader extends Model
     protected $casts = [
         'date_naissance'=>'datetime',
     ];
-   
+
     //Inverse of the one to one relationship BelongsTo
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    //One trader can comment many posts or comment a post many time
+    public function posts(){
+        return $this->hasMany(Post::class);
     }
 }
