@@ -81,13 +81,11 @@
                   <li class="list-group-item">
                     <b>Sexe</b> <a class="float-right">{{Auth::user()->sexe}}</a>
                   </li>
-
-
                 </ul>
                 @if(Auth::user()->profile_status == 0)
-                    <a href="{{asset('completer-profile')}}" class="btn btn-danger btn-block"><b>Mettre à jour</b></a>
+                    <a href="{{asset('completer-profile')}}" class="btn btn-danger btn-block"><b>Veuillez completer vos informations.</b></a>
                 @else
-                    <a href="{{asset('completer-profile')}}" class="btn btn-success btn-block"><b>Informations completes. Modifier ?</b></a>
+                    <a href="{{asset('completer-profile')}}" class="btn btn-success btn-block"><b>Mise a jour de vos informations.</b></a>
                 @endif
                 </div>
               <!-- /.card-body -->

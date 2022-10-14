@@ -60,8 +60,11 @@
                                 ?>
                             </td>
                             <td>
-                                <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                {{-- <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                 <a href=""><button class="btn btn-info"><i class="fa fa-edit"></i></button></a>
+                                 --}}<button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                <a href="edit-traders/{{$trader->id}}"><button class="btn btn-warning"><i class="fa fa-edit"></i></button></a>
+                                <button class="btn btn-info"><i class="fa fa-plus-circle"></i></button>
                             </td>
                         </tr>
                     @endforeach

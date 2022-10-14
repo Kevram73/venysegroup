@@ -62,7 +62,8 @@ Route::get('traders','App\Http\Controllers\TraderController@index');
 Route::get('add-trader','App\Http\Controllers\TraderController@showForm');
 Route::get('completer-profile', 'App\Http\Controllers\TraderController@updateProfileForm');
 Route::post('completer-profile','App\Http\Controllers\TraderController@updateProfile');
-
+Route::get('edit-traders/{id}','App\Http\Controllers\TraderController@show');
+Route::post('edit-trader/{id}','App\Http\Controllers\TraderController@validation');
 /**
  * Resources pour la section forum
  */

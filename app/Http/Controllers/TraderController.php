@@ -67,4 +67,10 @@ class TraderController extends Controller
         }
     }
 
-}
+    public function show($id){
+        $trader = Trader::findOrFail($id);
+        return view('venyse/editTraders',['trader'=>$trader]);
+    }
+
+} 
+ 
